@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    
+}
+
+.container{
+    text-align: center;
+}
+
+.h1{
+    display: block;
+    margin: 0px  0px 50px 0px;
+    color: rgb(191, 159, 64);
+    font-size: 30px;
+}
+
+#h1{
+    border: 1px;
+    background-color: rgb(32, 44, 63);
+    padding: 20px;
+    font-size: 40px;
+    color: rgb(80, 224, 31);
+}
+
+p{
+    margin: 30px;
+    color: rgb(51, 182, 182);
+}
+
+#submitGuess{
+    
+    border: 1px;
+    padding: 13px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: rgb(14, 85, 127);
+    color: white;
+    
+}
+
+#guess{
+    border: solid 1px white;
+    display: block;
+    margin: 40px auto;
+    padding: 6px;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+}
+
+span{
+    color: aliceblue;
+}
+
+.lowOrHi{
+    color: rgb(10, 241, 48);
+}
+
+.p1{
+    color: rgb(167, 10, 239);
+}
