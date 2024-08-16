@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <!-- XMLHttpRequest: readyState property :--- The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete. -->
+
+    <!-- <img id="image" alt="Github Image"> -->
+    <!-- <p id="follower"></p> -->
+
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(data)
+            const imageUrl = data.avatar_url;
+            console.log(data.followers)
+
+            const card = document.createElement('div');
+            card.style.border = '1px solid white'
+            card.style.backgroundColor = 'aqua';
+            card.style.borderRadius = '10px';
+            card.style.margin = '180px'
+            
+            card.style.display = 'inline-block'
+            card.style.color = 'black'
+
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.height = '300';
+            img.display = 'block'
+            card.appendChild(img);
+
+            const follower = document.createElement('p');
+            follower.innerHTML = data.followers;
+
+            card.appendChild(follower)
+
+            document.body.appendChild(card)
+
+            const body = document.body;
+            body.style.textAlign = 'center'
+            
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
